@@ -47,8 +47,8 @@ ServerEvents.recipes(event => {
     // Assembly Line
     // Dimensional Superassembler
     event.recipes.gtceu.assembly_line("dimensional_superassembler")
-        .itemInputs("gtceu:assembly_line", "4x #gtceu:circuits/uiv", "16x gtceu:infinity_plate", "4x kubejs:dimensional_stabilization_netherite_casing", "16x kubejs:omnic_matrix_machine_casing", "6x gtceu:uev_conveyor_module", "4x gtceu:uev_robot_arm", "4x gtceu:uev_emitter", "2x gtceu:infinity_frame", "24x gtceu:polyethyl_cyanoacrylate_plate")
-        .inputFluids("gtceu:soldering_alloy 11520", "gtceu:omnium 5760")
+        .itemInputs("gtceu:assembly_line", "4x #gtceu:circuits/uiv", "16x gtceu:infinity_plate", "4x kubejs:dimensional_stabilization_netherite_casing", "16x kubejs:omnic_matrix_machine_casing", "6x gtceu:uev_conveyor_module", "4x gtceu:uev_robot_arm", "4x gtceu:uev_emitter", "2x gtceu:infinity_frame")
+        .inputFluids("gtceu:soldering_alloy 11520", "gtceu:omnium 5760", "gtceu:polyethyl_cyanoacrylate 3456")
         .itemOutputs("gtceu:dimensional_superassembler")
         .duration(6000)
         .EUt(13920000)
@@ -74,8 +74,8 @@ ServerEvents.recipes(event => {
 
     // Helical Fusion Reactor
     event.recipes.gtceu.assembly_line("gtceu:helical_fusion_reactor")
-        .itemInputs("gtceu:uv_fusion_reactor", "4x #gtceu:circuits/uev", "gtceu:gravi_star", "2x gtceu:double_activated_netherite_plate", "4x gtceu:uhv_field_generator", "64x kubejs:multidimensional_cpu_chip", "64x kubejs:multidimensional_cpu_chip", "64x gtceu:ruthenium_trinium_americium_neutronate_single_wire", "24x gtceu:polyethyl_cyanoacrylate_plate")
-        .inputFluids("gtceu:soldering_alloy 11520", "gtceu:omnium 5760")
+        .itemInputs("gtceu:uv_fusion_reactor", "4x #gtceu:circuits/uev", "gtceu:gravi_star", "2x gtceu:double_activated_netherite_plate", "4x gtceu:uhv_field_generator", "64x kubejs:multidimensional_cpu_chip", "64x kubejs:multidimensional_cpu_chip", "64x gtceu:ruthenium_trinium_americium_neutronate_single_wire")
+        .inputFluids("gtceu:soldering_alloy 11520", "gtceu:omnium 5760", "gtceu:polyethyl_cyanoacrylate 3456")
         .itemOutputs("gtceu:helical_fusion_reactor")
         .duration(6000)
         .EUt(13920000)
@@ -266,38 +266,6 @@ ServerEvents.recipes(event => {
         .duration(20)
         .EUt(30)
 
-    // Ultimate Gem
-    event.recipes.extendedcrafting.shapeless_table(
-        "kubejs:ultimate_gem",
-        [
-            "kubejs:destabilized_clathrate",
-            "gtceu:enori_empowered_gem",
-            "enderio:ender_crystal",
-            "enderio:vibrant_crystal",
-            "gtceu:dilithium_gem",
-            "enderio:enticing_crystal",
-            "enderio:weather_crystal",
-            "enderio:prescient_crystal",
-            "enderio:pulsating_crystal",
-            "minecraft:prismarine_shard",
-            "gtceu:cinnabar_gem",
-            "kubejs:energized_clathrate",
-            "minecraft:quartz",
-            "gtceu:certus_quartz_gem",
-            "gtceu:fluix_gem",
-            "gtceu:restonia_empowered_gem",
-            "gtceu:palis_empowered_gem",
-            "gtceu:diamatine_empowered_gem",
-            "gtceu:void_empowered_gem",
-            "gtceu:emeradic_empowered_gem",
-            "kubejs:resonating_crystal",
-            "minecraft:emerald",
-            "redstone_arsenal:flux_gem",
-            "minecraft:diamond",
-            "kubejs:resonant_clathrate"
-        ]
-    )
-
     event.recipes.extendedcrafting.shaped_table("gtceu:zero_point_module", [
         "  PPPPP  ",
         "  PBCBP  ",
@@ -372,7 +340,7 @@ ServerEvents.recipes(event => {
 
     // Beyond this point we could probably just treat these like joke items
     event.recipes.gtceu.assembly_line("zpm_world_accelerator")
-        .itemInputs("gtceu:uev_machine_hull", "64x gtceu:uev_field_generator", "16x gtceu:uev_field_generator", "20x gtceu:uev_sensor", "20x gtceu:uev_emitter", "16x #gtceu:circuits/uev", "4x gtceu:double_holmium_plate", "2x gtceu:dense_infinity_plate")
+        .itemInputs("gtceu:uev_machine_hull", "64x gtceu:uev_field_generator", "16x gtceu:uev_field_generator", "20x gtceu:uev_sensor", "20x gtceu:uev_emitter", "16x #gtceu:circuits/uev", "4x gtceu:double_necrosiderite_plate", "2x gtceu:dense_infinity_plate")
         .inputFluids("gtceu:omnium 1152", "gtceu:soldering_alloy 1152")
         .itemOutputs("gtceu:zpm_world_accelerator")
         .duration(6000)
@@ -483,4 +451,37 @@ ServerEvents.recipes(event => {
         .itemOutputs("kubejs:contained_singularity")
         .duration(20)
         .EUt(GTValues.VA[GTValues.UEV])
+
+    // Knowledge Transmission Array
+    event.recipes.gtceu.assembly_line("knowledge_transmission_array")
+        .itemInputs("gtceu:uiv_machine_casing", "16x gtceu:necrosiderite_double_cable", "16x gtceu:uev_emitter", "16x gtceu:data_transmitter_hatch", "2x gtceu:sculk_bioalloy_frame", "32x gtceu:normal_optical_pipe", "32x gtceu:darconite_single_cable", "2x gtceu:network_switch", "32x gtceu:rhodium_foil")
+        .inputFluids("gtceu:advanced_soldering_alloy 1152", "gtceu:omnium 2304", "gtceu:polyethyl_cyanoacrylate 1152")
+        .itemOutputs("monilabs:knowledge_transmission_array")
+        .duration(2000)
+        .EUt(7864320)
+        .stationResearch(b => b
+            .researchStack("gtceu:data_transmitter_hatch")
+            .CWUt(96, 57600)
+            .EUt(1966080)
+        )
+
+    // Omniscience Research Beacon
+    event.recipes.gtceu.assembly_line("omniscience_research_beacon")
+        .itemInputs("gtceu:computation_receiver_hatch", "8x gtceu:necrosiderite_hex_cable", "4x gtceu:research_station", "16x gtceu:advanced_computer_casing", "16x #gtceu:circuits/uev", "3x gtceu:uev_sensor", "kubejs:universal_navigator", "4x gtceu:uev_field_generator", "4x gtceu:sculk_bioalloy_plate", "64x gtceu:normal_optical_pipe", "64x gtceu:fine_ruridit_wire", "32x gtceu:osmium_tantalum_einsteinium_caesium_omnide_single_wire")
+        .inputFluids("gtceu:advanced_soldering_alloy 2304", "gtceu:omnium 4608", "gtceu:polyethyl_cyanoacrylate 2304")
+        .itemOutputs("gtceu:creative_data_multi")
+        .duration(4000)
+        .EUt(7864320)
+        .stationResearch(b => b
+            .researchStack("gtceu:research_station")
+            .CWUt(96, 57600)
+            .EUt(1966080)
+        )
+
+    // Chromodynamic Conduction Casing
+    event.recipes.gtceu.omnic_forge("chromodynamic_conduction_casing")
+        .itemInputs("gtceu:activated_netherite_frame", "2x gtceu:normal_laser_pipe", "8x gtceu:omnium_single_wire", "#gtceu:circuits/luv")
+        .itemOutputs("monilabs:chromodynamic_conduction_casing")
+        .duration(50)
+        .EUt(GTValues.VHA[GTValues.UV])
 })

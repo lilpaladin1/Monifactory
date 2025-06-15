@@ -249,6 +249,23 @@ GTCEuStartupEvents.registry("gtceu:material", event => {
         ])
 })
 
+// Empowered Gemstone
+GTCEuStartupEvents.registry("gtceu:material", event => {
+    event.create("gemstone_empowered")
+        .gem()
+        .color(0x0066ff).secondaryColor(0x000099) // Rainbow Effect?
+        .iconSet(GTMaterialIconSet.DIAMOND)
+        .components("1x restonia_empowered", "1x enori_empowered", "1x void_empowered", "1x palis_empowered", "1x diamatine_empowered", "1x emeradic_empowered")
+        .ignoredTagPrefixes([
+            TagPrefix.dust,
+            TagPrefix.dustSmall,
+            TagPrefix.dustTiny,
+            TagPrefix.gemExquisite,
+            TagPrefix.gemFlawless,
+            TagPrefix.rod,
+        ])
+})
+
 
 // Sunnarium
 GTCEuStartupEvents.registry("gtceu:material", event => {
@@ -425,10 +442,10 @@ GTCEuStartupEvents.registry("gtceu:material", event => {
         .fluid()
         .color(0xF16AA5)
 
-    event.create("holmium_oxide")
+    event.create("necrosiderite_oxide")
         .dust()
         .color(0xD29092)
-        .components("2x holmium", "3x oxygen")
+        .components("2x necrosiderite", "3x oxygen")
 
     event.create("waste_gas_mixture")
         .fluid()

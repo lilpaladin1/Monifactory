@@ -47,7 +47,7 @@ GTCEuStartupEvents.registry("gtceu:recipe_type", event => {
     event.create("universal_crystallizer")
         .category("multiblock")
         .setEUIO("in")
-        .setMaxIOSize(9, 1, 1, 0)
+        .setMaxIOSize(9, 1, 2, 0)
         .setSlotOverlay(false, false, GuiTextures.SOLIDIFIER_OVERLAY)
         .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, FillDirection.LEFT_TO_RIGHT)
         .setSound(GTSoundEntries.COMPUTATION)
@@ -597,7 +597,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
             .where("V", Predicates.blocks(GTBlocks.CASING_GRATE.get()))
             .build())
         .workableCasingRenderer("kubejs:block/microverse/casing",
-            "gtceu:block/multiblock/implosion_compressor", false)
+            "gtceu:block/machines/projectors", false)
 
     // Advanced Microverse Projector
     event.create("advanced_microverse_projector", "multiblock")
@@ -620,7 +620,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
             .where(" ", Predicates.air())
             .build())
         .workableCasingRenderer("kubejs:block/microverse/casing",
-            "gtceu:block/multiblock/implosion_compressor", false)
+            "gtceu:block/machines/projectors", false)
 
     // Advanced Microverse Projector II
     event.create("advanced_microverse_projector_ii", "multiblock")
@@ -648,7 +648,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
             .where("#", Predicates.any())
             .build())
         .workableCasingRenderer("kubejs:block/microverse/casing",
-            "gtceu:block/multiblock/implosion_compressor", false)
+            "gtceu:block/machines/projectors", false)
 
     // Microverse Projector III (Hyperbolic Microverse Projector)
     event.create("hyperbolic_microverse_projector", "multiblock")
@@ -685,7 +685,7 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
             .where("#", Predicates.any())
             .build())
         .workableCasingRenderer("kubejs:block/microverse/casing",
-            "gtceu:block/multiblock/implosion_compressor", false)
+            "gtceu:block/machines/projectors", false)
 
     // Naquadah Reactor I
     event.create("naquadah_reactor", "multiblock")
@@ -1067,26 +1067,26 @@ GTCEuStartupEvents.registry("gtceu:machine", event => {
         .appearanceBlock(() => Block.getBlock("kubejs:bioalloy_casing"))
         .pattern(definition => FactoryBlockPattern.start()
             .aisle("###NNNNNNN###", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############")
-            .aisle("##NNNNNNNNN##", "###NDDNDDN###", "###NDDNDDN###", "###NDDNDDN###", "###NCCCCCN###", "###NNNNNNN###", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "###NNNNNNN###", "#############", "#############", "#############", "#############")
-            .aisle("#NNNNNNNNNNN#", "##NAHHAHHAN##", "##NAHHAHHAN##", "##NAHHHHHAN##", "##NAHHCHHAN##", "##NNAAAAANN##", "##NNNNNNNNN##", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "##FNNNNNNNF##", "##NN#####NN##", "#############", "#############", "#############", "#############")
+            .aisle("##NNNNNNNNN##", "###NDDNDDN###", "###NDDNDDN###", "###NDDNDDN###", "###NCCCCCN###", "###NNNNNNN###", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "###NNNCNNN###", "#############", "#############", "#############", "#############")
+            .aisle("#NNNNNNNNNNN#", "##NAHHAHHAN##", "##NAHHAHHAN##", "##NAHHHHHAN##", "##NAHHCHHAN##", "##NNAAAAANN##", "##NNNNNNNNN##", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "##FNNNCNNNF##", "##NN#####NN##", "#############", "#############", "#############", "#############")
             .aisle("NNNNNNNNNNNNN", "#NA#######AN#", "#NA#######AN#", "#NA###G###AN#", "#NA##GCG##AN#", "#NA###G###AN#", "##N#######N##", "###NNNNNNN###", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "###FNNCNNF###", "##NN#####NN##", "#NN#######NN#", "#############", "#############", "#############", "#############")
             .aisle("NNNNNNNNNNNNN", "#DH#######HD#", "#DH#######HD#", "#DH###G###HD#", "#CH##GCG##HC#", "#NA###G###AN#", "##N#######N##", "###NGGGGGN###", "####F###F####", "####F###F####", "####F###F####", "####F###F####", "####F###F####", "####F###F####", "####F###F####", "####FFFFF####", "####FNCNF####", "###NN###NN###", "##N#######N##", "#N#########N#", "#############", "#############", "#############", "#############")
             .aisle("NNNNNNNNNNNNN", "#DH###G###HD#", "#DH###G###HD#", "#DH###G###HD#", "#CHGGGCGGGHC#", "#NA###G###AN#", "##N###G###N##", "###NGGGGGN###", "######G######", "######G######", "######G######", "######G######", "######G######", "######G######", "######G######", "####FNCNF####", "####N###N####", "###N#####N###", "##N#######N##", "#N#########N#", "#############", "#############", "#############", "#############")
-            .aisle("NNNNNNNNNNNNN", "#NA##GCG##AN#", "#NA##GCG##AN#", "#NHGGGCGGGHN#", "#CCCCCCCCCCC#", "#NAGGGCGGGAN#", "##N##GCG##N##", "###NGGCGGN###", "#####GCG#####", "#####GCG#####", "#####GCG#####", "#####GCG#####", "#####GCG#####", "#####GCG#####", "#####GCG#####", "####FCCCF####", "####C#C#C####", "###N##C##N###", "##N###C###N##", "#N####C####N#", "######C######", "######C######", "######C######", "######I######")
+            .aisle("NNNNNNNNNNNNN", "#NA##GCG##AN#", "#NA##GCG##AN#", "#NHGGGCGGGHN#", "#CCCCCCCCCCC#", "#NAGGGCGGGAN#", "##N##GCG##N##", "###NGGCGGN###", "#####GCG#####", "#####GCG#####", "#####GCG#####", "#####GCG#####", "#####GCG#####", "#####GCG#####", "#####GCG#####", "####FCCCF####", "####C#C#C####", "###C##C##C###", "##C###C###C##", "#C####C####C#", "######C######", "######C######", "######C######", "######I######")
             .aisle("NNNNNNNNNNNNN", "#DH###G###HD#", "#DH###G###HD#", "#DH###G###HD#", "#CHGGGCGGGHC#", "#NA###G###AN#", "##N###G###N##", "###NGGGGGN###", "######G######", "######G######", "######G######", "######G######", "######G######", "######G######", "######G######", "####FNCNF####", "####N###N####", "###N#####N###", "##N#######N##", "#N#########N#", "#############", "#############", "#############", "#############")
             .aisle("NNNNNNNNNNNNN", "#DH#######HD#", "#DH#######HD#", "#DH###G###HD#", "#CH##GCG##HC#", "#NA###G###AN#", "##N#######N##", "###NGGGGGN###", "####F###F####", "####F###F####", "####F###F####", "####F###F####", "####F###F####", "####F###F####", "####F###F####", "####FFFFF####", "####FNCNF####", "###NN###NN###", "##N#######N##", "#N#########N#", "#############", "#############", "#############", "#############")
             .aisle("NNNNNNNNNNNNN", "#NA#######AN#", "#NA#######AN#", "#NA###G###AN#", "#NA##GCG##AN#", "#NA###G###AN#", "##N#######N##", "###NNNNNNN###", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "###FNNCNNF###", "##NN#####NN##", "#NN#######NN#", "#############", "#############", "#############", "#############")
-            .aisle("#NNNNNNNNNNN#", "##NAHHAHHAN##", "##NAHHAHHAN##", "##NAHHHHHAN##", "##NAHHCHHAN##", "##NNAAAAANN##", "##NNNNNNNNN##", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "##FNNNNNNNF##", "##NN#####NN##", "#############", "#############", "#############", "#############")
-            .aisle("##NNNNNNNNN##", "###NDDNDDN###", "###NDDNDDN###", "###NDDNDDN###", "###NCCCCCN###", "###NNNNNNN###", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "###NNNNNNN###", "#############", "#############", "#############", "#############")
+            .aisle("#NNNNNNNNNNN#", "##NAHHAHHAN##", "##NAHHAHHAN##", "##NAHHHHHAN##", "##NAHHCHHAN##", "##NNAAAAANN##", "##NNNNNNNNN##", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "##FNNNCNNNF##", "##NN#####NN##", "#############", "#############", "#############", "#############")
+            .aisle("##NNNNNNNNN##", "###NDDNDDN###", "###NDDNDDN###", "###NDDNDDN###", "###NCCCCCN###", "###NNNNNNN###", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "###NNNCNNN###", "#############", "#############", "#############", "#############")
             .aisle("###NNN@NNN###", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############", "#############")
             .where("#", Predicates.any())
             .where("@", Predicates.controller(Predicates.blocks(definition.get())))
-            .where("G", Predicates.blocks(GTBlocks.FUSION_GLASS.get()))
+            .where("G", Predicates.blocks("kubejs:prism_glass"))
             .where("A", Predicates.blocks(GTBlocks.ADVANCED_COMPUTER_CASING.get()))
             .where("H", Predicates.blocks(GTBlocks.HIGH_POWER_CASING.get()))
-            .where("C", Predicates.blocks(GTBlocks.SUPERCONDUCTING_COIL.get()))
-            .where("F", Predicates.frames(GTMaterials.Europium))
-            .where("I", Predicates.blocks(GTBlocks.MACHINE_CASING_UIV.get()))
+            .where("C", Predicates.blocks("kubejs:bioalloy_fusion_casing"))
+            .where("F", Predicates.blocks("gtceu:sculk_bioalloy_frame"))
+            .where("I", Predicates.blocks("monilabs:knowledge_transmission_array"))
             .where("D", Predicates.blocks(GTBlocks.ADVANCED_COMPUTER_CASING.get()))
             .where("N",
                 Predicates.blocks("kubejs:bioalloy_casing").setMinGlobalLimited(392)
